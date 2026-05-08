@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Poppins, DM_Sans } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
+import ScrollToTop from '@/components/ScrollToTop'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`scroll-smooth ${poppins.variable} ${dmSans.variable}`}>
       <body className="font-body antialiased">
+        <ScrollToTop />
         <Navbar />
         {children}
       </body>
