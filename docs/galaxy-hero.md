@@ -56,7 +56,7 @@ ROTATION_SPEED: 0.32
 
 ## Mobile Responsiveness
 - **Hero height**: `min-h-screen` to keep natural page flow and scrolling
-- **Galaxy footprint**: mobile wrapper reduced to `h-[72vh]` so the galaxy occupies less vertical space
+- **Galaxy footprint**: mobile wrapper set to `h-[78vh]` for a slightly larger galaxy presence before the next section
 - **Touch scrolling fix**: galaxy wrapper uses `pointer-events-none sm:pointer-events-auto` so finger swipe scroll works even when touching the galaxy on mobile
 - **Desktop behavior preserved**: full-height galaxy and pointer interaction remain active from `sm` and up
 - **Content anchor**: `items-start sm:items-center` with `pt-24 sm:pt-0`
