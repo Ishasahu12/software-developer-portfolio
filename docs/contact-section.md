@@ -44,12 +44,12 @@ A premium contact section with a compelling heading, genuine positioning copy, s
 - **Border**: Top border `border-white/[0.05]`
 
 ## Section Spacing
-- Top padding: `pt-32 sm:pt-44`
+- Top padding: `pt-14 sm:pt-44`
 - Bottom padding: `pb-8` (minimal)
 - Max-width: `max-w-2xl` for content column
 
 ## Mobile Responsiveness
-- **Section padding**: `pt-32 sm:pt-44` — reduced from typical desktop values to minimize excess whitespace on mobile
+- **Section padding**: `pt-14 sm:pt-44` — tightened mobile top spacing for consistency with other sections
 - **Content padding**: `px-8 sm:px-12 lg:px-16`
 - **Heading**: `text-3xl sm:text-5xl` — single column on mobile, scales up on tablet+
 - **Social links**: `flex-col sm:flex-row` — stacked on mobile, row on tablet+

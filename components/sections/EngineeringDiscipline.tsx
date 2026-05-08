@@ -28,7 +28,7 @@ const toolCategories = [
 
 export default function EngineeringDiscipline() {
   return (
-    <section id="discipline" className="relative bg-void py-20 sm:py-24 lg:py-32 border-t border-white/[0.04]">
+    <section id="discipline" className="relative bg-void py-14 sm:py-24 lg:py-32 border-t border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16"

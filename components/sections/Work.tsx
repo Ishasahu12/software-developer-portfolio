@@ -52,7 +52,7 @@ const item = {
 
 export default function Work() {
   return (
-    <section id="work" className="relative bg-void py-20 sm:py-32 lg:py-44">
+    <section id="work" className="relative bg-void py-14 sm:py-32 lg:py-44">
       <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
         <motion.div
           className="mb-12 lg:mb-20"

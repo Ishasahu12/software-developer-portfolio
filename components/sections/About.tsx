@@ -5,7 +5,7 @@ import PixelPortrait from "./PixelPortrait";
 
 export default function About() {
   return (
-    <section id="about" className="relative bg-void py-20 sm:py-32 lg:py-44 border-t border-white/[0.04]">
+    <section id="about" className="relative bg-void py-14 sm:py-32 lg:py-44 border-t border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           <motion.div

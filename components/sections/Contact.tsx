@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative bg-void pt-32 sm:pt-44 pb-8 border-t border-white/[0.04]">
+    <section id="contact" className="relative bg-void pt-14 sm:pt-44 pb-8 border-t border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
         <motion.div
           className="max-w-2xl"
