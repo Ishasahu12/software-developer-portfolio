@@ -49,5 +49,17 @@ ROTATION_SPEED: 0.32
 - `framer-motion: ^11.1.0`
 - Next.js 14 App Router
 
+## Mobile Responsiveness
+- **Container**: `h-screen` full viewport, no additional top padding
+- **Content anchor**: `items-end sm:items-center` — content pinned to bottom on mobile, centered on larger screens
+- **Content padding**: `px-6 sm:px-12 lg:px-16 pb-16 sm:pb-0` — reduced horizontal padding on mobile, bottom padding to clear nav
+- **Subheading**: `text-[11px] sm:text-xs`, reduced tracking on mobile
+- **Heading**: `text-5xl sm:text-6xl lg:text-[5.5rem]` — scales down significantly on mobile for readability
+- **Body text**: `text-sm sm:text-base`, max-width `max-w-sm` on all screens
+- **CTA button**: `px-7 py-3.5` — compact on mobile
+- **Galaxy canvas**: Fills entire viewport behind content
+
 ## File Location
 `components/hero/GalaxyCanvas.tsx`
+`components/hero/Hero.tsx`
+`components/hero/HeroContent.tsx`

@@ -39,5 +39,16 @@ github: string (GitHub repo URL)
 - Border: `border-white/[0.06]` → hover `border-white/[0.1]`
 - Background: `bg-white/[0.02]` → hover `bg-white/[0.04]`
 
+## Mobile Responsiveness
+- **Section padding**: `py-20 sm:py-32 lg:py-44` — compact vertical padding on mobile
+- **Container padding**: `px-8 sm:px-12 lg:px-16` — reduced horizontal padding on mobile
+- **Section heading**: `text-3xl sm:text-5xl` — smaller on mobile
+- **Heading margin**: `mb-12 lg:mb-20` — tighter on mobile
+- **Card gap**: `gap-6 lg:gap-8` — tighter on mobile
+- **Card layout**: `grid-cols-1 md:grid-cols-2` — single column on mobile
+- **Card padding**: `p-8 sm:p-10` — compact on mobile
+- **Stack tags**: `flex-wrap gap-2` — wraps naturally
+- **Link row**: `gap-6` — tighter spacing
+
 ## File Location
 `components/sections/Work.tsx`

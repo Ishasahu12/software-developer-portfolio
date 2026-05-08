@@ -48,5 +48,14 @@ A premium contact section with a compelling heading, genuine positioning copy, s
 - Bottom padding: `pb-8` (minimal)
 - Max-width: `max-w-2xl` for content column
 
+## Mobile Responsiveness
+- **Section padding**: `pt-32 sm:pt-44` — reduced from typical desktop values to minimize excess whitespace on mobile
+- **Content padding**: `px-8 sm:px-12 lg:px-16`
+- **Heading**: `text-3xl sm:text-5xl` — single column on mobile, scales up on tablet+
+- **Social links**: `flex-col sm:flex-row` — stacked on mobile, row on tablet+
+- **Link gap**: `gap-6 sm:gap-12`
+- **Footer**: `mt-12 pt-6` — compact on mobile, minimal spacing
+- **Footer layout**: `flex-col sm:flex-row justify-between` — stacked on mobile
+
 ## File Location
 `components/sections/Contact.tsx`

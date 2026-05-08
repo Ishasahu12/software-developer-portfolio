@@ -12,7 +12,10 @@ Portrait image        (aligned with portrait top)
 
 ## Mobile Layout
 - Stacked: Portrait above, text below
-- Reduced spacing and padding
+- Portrait: `max-w-[180px] sm:max-w-[220px]` — smaller on mobile
+- Section padding: `py-20 sm:py-32 lg:py-44` — compact on mobile
+- Grid gap: `gap-8 lg:gap-12` — tighter on mobile
+- Text top alignment offset: `sm:pt-[88px]` — only on tablet+
 
 ## Left Column Elements
 1. Section heading: "About me" (Poppins, 3xl/5xl)

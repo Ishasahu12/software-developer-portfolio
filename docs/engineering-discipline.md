@@ -36,5 +36,15 @@ Deploy:      Docker, Vercel, Vite, Postman, GitHub
 - Section headings: Poppins (via `font-heading`)
 - Body text: DM Sans (via `font-body`)
 
+## Mobile Responsiveness
+- **Section padding**: `py-20 sm:py-24 lg:py-32` — compact on mobile
+- **Container padding**: `px-8 sm:px-12 lg:px-16`
+- **Layout**: `grid-cols-1 lg:grid-cols-2` — stacked on mobile, two columns on desktop
+- **Grid gap**: `gap-12 lg:gap-16` — tighter on mobile
+- **Stats number**: `text-5xl sm:text-6xl` — scales down on mobile
+- **Tools layout**: Stacked category rows, each `flex items-start gap-4`
+- **Category label**: `w-20 shrink-0` fixed width for alignment
+- **Closing line**: `mt-10 lg:mt-16` — tighter on mobile, `max-w-md`
+
 ## File Location
 `components/sections/EngineeringDiscipline.tsx`
