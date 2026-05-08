@@ -27,9 +27,9 @@ const CONFIG = {
   // 4 concentric circular rings
   rings: [
     { id: 1, centerR: 38,  thickness: 6,   yScale: 1.6, colorWarmth: 1.0, colorTone: 'gold' },      // inner thin
-    { id: 2, centerR: 105, thickness: 11,  yScale: 2.8, colorWarmth: 0.9, colorTone: 'white' },     // mid-inner medium
-    { id: 3, centerR: 205, thickness: 17,  yScale: 4.2, colorWarmth: 0.8, colorTone: 'blue' },      // mid-outer thick
-    { id: 4, centerR: 345, thickness: 26,  yScale: 6.0, colorWarmth: 0.7, colorTone: 'cyan' },      // outer thickest
+    { id: 2, centerR: 105, thickness: 11,  yScale: 2.8, colorWarmth: 1.0, colorTone: 'white' },     // mid-inner medium
+    { id: 3, centerR: 205, thickness: 17,  yScale: 4.2, colorWarmth: 1.0, colorTone: 'blue' },      // mid-outer thick
+    { id: 4, centerR: 345, thickness: 26,  yScale: 6.0, colorWarmth: 1.0, colorTone: 'cyan' },      // outer thickest
   ],
   camera: {
     start: { x: 0, y: 55, z: 260 },
@@ -46,13 +46,13 @@ const CONFIG = {
     floatSpeed: 0.04,
   },
   visual: {
-    pointSize: 1.55,
+    pointSize: 1.8,
     depthFadeStart: 15,
     depthFadeEnd: 950,
   },
   composition: {
     galaxyOffsetX: 55,
-    galaxyOffsetY: 18,
+    galaxyOffsetY: 22,
     galaxyRotationX: 0.32,
     galaxyRotationZ: 0.04,
   },
@@ -417,15 +417,14 @@ function generateGalaxy() {
       // Color by ring
       let cr, cg, cb;
       const rr = R();
-      const w = ring.colorWarmth;
       if (ring.colorTone === 'gold') {
-        cr = (0.92 + rr * 0.08) * w; cg = (0.86 + rr * 0.08) * w; cb = (0.72 + rr * 0.10) * w;
+        cr = 0.98 + rr * 0.02; cg = 0.94 + rr * 0.04; cb = 0.76 + rr * 0.10;
       } else if (ring.colorTone === 'white') {
-        cr = (0.84 + rr * 0.08) * w; cg = (0.86 + rr * 0.08) * w; cb = (0.82 + rr * 0.08) * w;
+        cr = 0.94 + rr * 0.04; cg = 0.95 + rr * 0.03; cb = 0.93 + rr * 0.05;
       } else if (ring.colorTone === 'blue') {
-        cr = (0.54 + rr * 0.10) * w; cg = (0.66 + rr * 0.10) * w; cb = (0.92 + rr * 0.08) * w;
+        cr = 0.50 + rr * 0.12; cg = 0.68 + rr * 0.12; cb = 1.0;
       } else { // cyan
-        cr = (0.50 + rr * 0.10) * w; cg = (0.62 + rr * 0.10) * w; cb = (0.88 + rr * 0.08) * w;
+        cr = 0.44 + rr * 0.12; cg = 0.72 + rr * 0.12; cb = 1.0;
       }
 
       // Size: larger on inner rings for detail, slightly smaller on outer

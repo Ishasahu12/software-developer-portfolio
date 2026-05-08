@@ -21,8 +21,8 @@ const item = {
 
 export default function HeroContent() {
   return (
-    <div className="absolute inset-0 z-20 flex items-end sm:items-center pointer-events-none">
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pb-16 sm:pb-0">
+    <div className="absolute inset-0 z-20 flex items-start sm:items-center pointer-events-none pt-24 sm:pt-0">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pb-20 sm:pb-0">
         <motion.div
           className="max-w-xl pointer-events-auto"
           variants={container}

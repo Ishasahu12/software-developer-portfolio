@@ -49,15 +49,30 @@ ROTATION_SPEED: 0.32
 - `framer-motion: ^11.1.0`
 - Next.js 14 App Router
 
+## Composition Offsets
+- **Galaxy offset X**: 55 (slightly right of center for visual balance)
+- **Galaxy offset Y**: 22 (moved up from 18 for better mobile centering)
+- **Galaxy rotation X**: 0.32 (tilt angle)
+
 ## Mobile Responsiveness
 - **Container**: `h-screen` full viewport, no additional top padding
-- **Content anchor**: `items-end sm:items-center` — content pinned to bottom on mobile, centered on larger screens
-- **Content padding**: `px-6 sm:px-12 lg:px-16 pb-16 sm:pb-0` — reduced horizontal padding on mobile, bottom padding to clear nav
+- **Content anchor**: `items-start sm:items-center` — content pinned to top on mobile with `pt-24 sm:pt-0`
+- **Content padding**: `px-6 sm:px-12 lg:px-16 pb-20 sm:pb-0` — bottom padding to clear nav on mobile
 - **Subheading**: `text-[11px] sm:text-xs`, reduced tracking on mobile
-- **Heading**: `text-5xl sm:text-6xl lg:text-[5.5rem]` — scales down significantly on mobile for readability
+- **Heading**: `text-5xl sm:text-6xl lg:text-[5.5rem]` — scales down significantly on mobile
 - **Body text**: `text-sm sm:text-base`, max-width `max-w-sm` on all screens
 - **CTA button**: `px-7 py-3.5` — compact on mobile
 - **Galaxy canvas**: Fills entire viewport behind content
+- **Galaxy Y offset**: `galaxyOffsetY: 22` — moved up so galaxy appears more centered on mobile
+
+## Color System (Poped Up)
+- Background: `#020204` (near-black void)
+- Ring 1 (gold): `cr=0.98-1.0, cg=0.94-0.98, cb=0.76-0.86` — full warmth, bright gold
+- Ring 2 (white): `cr=0.94-0.98, cg=0.95-0.98, cb=0.93-0.98` — pure white, no dimming
+- Ring 3 (blue): `cr=0.50-0.62, cg=0.68-0.80, cb=1.0` — saturated blue, no dimming
+- Ring 4 (cyan): `cr=0.44-0.56, cg=0.72-0.84, cb=1.0` — saturated cyan, no dimming
+- Core: Bright golden glow with additive blending
+- All rings use `colorWarmth: 1.0` for maximum brightness
 
 ## File Location
 `components/hero/GalaxyCanvas.tsx`
