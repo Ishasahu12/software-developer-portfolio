@@ -6,7 +6,9 @@ import HeroContent from "./HeroContent";
 export default function Hero() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-void">
-      <GalaxyCanvas />
+      <div className="absolute inset-x-0 top-0 h-[72vh] sm:inset-0 sm:h-full overflow-hidden pointer-events-none sm:pointer-events-auto">
+        <GalaxyCanvas />
+      </div>
 
       {/* Vignette */}
       <div

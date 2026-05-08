@@ -55,13 +55,12 @@ ROTATION_SPEED: 0.32
 - **Galaxy rotation X**: 0.32 (tilt angle)
 
 ## Mobile Responsiveness
-- **Container**: `min-h-screen` — allows full page scroll on mobile (was `h-screen` which blocked scrolling)
-- **Content anchor**: `items-start sm:items-center` — content pinned to top on mobile with `pt-24 sm:pt-0`
+- **Hero height**: `min-h-screen` to keep natural page flow and scrolling
+- **Galaxy footprint**: mobile wrapper reduced to `h-[72vh]` so the galaxy occupies less vertical space
+- **Touch scrolling fix**: galaxy wrapper uses `pointer-events-none sm:pointer-events-auto` so finger swipe scroll works even when touching the galaxy on mobile
+- **Desktop behavior preserved**: full-height galaxy and pointer interaction remain active from `sm` and up
+- **Content anchor**: `items-start sm:items-center` with `pt-24 sm:pt-0`
 - **Content padding**: `px-6 sm:px-12 lg:px-16 pb-20 sm:pb-0`
-- **Galaxy canvas**: Fills entire viewport behind content
-- **Galaxy Y offset**: `galaxyOffsetY: 22`
-- **Mobile color boost**: `uMobileBoost: 1.35` — on screens < 640px, colors are boosted 35% for more vibrant appearance
-- **Point size mobile**: `pointSize: 2.2` — larger on all screens for better visibility
 
 ## Color System (Poped Up)
 - Background: `#020204` (near-black void)
