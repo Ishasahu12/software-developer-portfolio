@@ -40,7 +40,7 @@ github: string (GitHub repo URL)
 - Background: `bg-white/[0.02]` → hover `bg-white/[0.04]`
 
 ## Mobile Responsiveness
-- **Section padding**: `py-10 sm:py-32 lg:py-44` — tighter mobile spacing so section starts earlier under hero
+- **Section padding**: `py-6 sm:py-32 lg:py-44` — starts earlier on mobile with minimal blank entry space
 - **Container padding**: `px-8 sm:px-12 lg:px-16` — reduced horizontal padding on mobile
 - **Section heading**: `text-3xl sm:text-5xl` — smaller on mobile
 - **Heading margin**: `mb-12 lg:mb-20` — tighter on mobile
