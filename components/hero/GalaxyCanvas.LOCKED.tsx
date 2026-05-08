@@ -11,10 +11,10 @@ const CONFIG = {
   counts: {
     core: 9000,
     bar: 2500,
-    ring1: 32000,   // inner thin
-    ring2: 42000,   // mid-inner medium
-    ring3: 48000,   // mid-outer thick
-    ring4: 52000,   // outer thickest
+    ring1: 32000,
+    ring2: 42000,
+    ring3: 48000,
+    ring4: 52000,
     clusters: 12000,
     interRing: 5000,
     thickDisk: 10000,
@@ -24,12 +24,11 @@ const CONFIG = {
     bg: 8000,
     total: 0,
   },
-  // 4 concentric circular rings
   rings: [
-    { id: 1, centerR: 38,  thickness: 6,   yScale: 1.6, colorWarmth: 1.0, colorTone: 'gold' },      // inner thin
-    { id: 2, centerR: 105, thickness: 11,  yScale: 2.8, colorWarmth: 1.0, colorTone: 'white' },     // mid-inner medium
-    { id: 3, centerR: 205, thickness: 17,  yScale: 4.2, colorWarmth: 1.0, colorTone: 'blue' },      // mid-outer thick
-    { id: 4, centerR: 345, thickness: 26,  yScale: 6.0, colorWarmth: 1.0, colorTone: 'cyan' },      // outer thickest
+    { id: 1, centerR: 38,  thickness: 6,   yScale: 1.6, colorTone: 'gold' },
+    { id: 2, centerR: 105, thickness: 11,  yScale: 2.8, colorTone: 'white' },
+    { id: 3, centerR: 205, thickness: 17,  yScale: 4.2, colorTone: 'blue' },
+    { id: 4, centerR: 345, thickness: 26,  yScale: 6.0, colorTone: 'cyan' },
   ],
   camera: {
     start: { x: 0, y: 55, z: 260 },
@@ -46,7 +45,7 @@ const CONFIG = {
     floatSpeed: 0.04,
   },
   visual: {
-    pointSize: 1.8,
+    pointSize: 2.2,
     depthFadeStart: 15,
     depthFadeEnd: 950,
   },
@@ -72,6 +71,7 @@ const vertexShader = `
   uniform float uCursorActive;
   uniform float uCursorStrength;
   uniform float uTurbulenceStrength;
+  uniform float uMobileBoost;
 
   attribute vec3 aOriginalPos;
   attribute float aSize;
@@ -230,7 +230,7 @@ const fragmentShader = `
     vec3 finalColor = mix(vColor, coreColor, core * 0.22);
 
     float luminosity = 1.0 + smoothstep(0.15, 0.0, dist) * 0.15;
-    finalColor *= luminosity;
+    finalColor *= luminosity * uMobileBoost;
 
     finalColor = mix(finalColor, vec3(0.62, 0.66, 0.78), vDepthFactor * 0.08);
     finalColor *= 1.08;
@@ -418,13 +418,13 @@ function generateGalaxy() {
       let cr, cg, cb;
       const rr = R();
       if (ring.colorTone === 'gold') {
-        cr = 0.98 + rr * 0.02; cg = 0.94 + rr * 0.04; cb = 0.76 + rr * 0.10;
+        cr = 1.0; cg = 0.94 + rr * 0.04; cb = 0.72 + rr * 0.12;
       } else if (ring.colorTone === 'white') {
-        cr = 0.94 + rr * 0.04; cg = 0.95 + rr * 0.03; cb = 0.93 + rr * 0.05;
+        cr = 0.97 + rr * 0.03; cg = 0.97 + rr * 0.03; cb = 0.97 + rr * 0.03;
       } else if (ring.colorTone === 'blue') {
-        cr = 0.50 + rr * 0.12; cg = 0.68 + rr * 0.12; cb = 1.0;
-      } else { // cyan
-        cr = 0.44 + rr * 0.12; cg = 0.72 + rr * 0.12; cb = 1.0;
+        cr = 0.42 + rr * 0.12; cg = 0.62 + rr * 0.14; cb = 1.0;
+      } else {
+        cr = 0.36 + rr * 0.12; cg = 0.68 + rr * 0.14; cb = 1.0;
       }
 
       // Size: larger on inner rings for detail, slightly smaller on outer
@@ -594,6 +594,10 @@ export default function GalaxyCanvas() {
     const nebulaDome = new THREE.Mesh(nebulaGeo, nebulaMat);
     scene.add(nebulaDome);
 
+    // Mobile detection — boost colors for smaller screens
+    const isMobile = window.innerWidth < 640;
+    const mobileBoost = isMobile ? 1.35 : 1.0;
+
     // Galaxy
     const data = generateGalaxy();
     const geometry = new THREE.BufferGeometry();
@@ -618,6 +622,7 @@ export default function GalaxyCanvas() {
         uCursorActive: { value: 0 },
         uCursorStrength: { value: 0 },
         uTurbulenceStrength: { value: 0.20 },
+        uMobileBoost: { value: mobileBoost },
       },
       transparent: true,
       depthWrite: false,

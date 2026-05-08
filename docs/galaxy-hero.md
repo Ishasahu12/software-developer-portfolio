@@ -55,15 +55,13 @@ ROTATION_SPEED: 0.32
 - **Galaxy rotation X**: 0.32 (tilt angle)
 
 ## Mobile Responsiveness
-- **Container**: `h-screen` full viewport, no additional top padding
+- **Container**: `min-h-screen` — allows full page scroll on mobile (was `h-screen` which blocked scrolling)
 - **Content anchor**: `items-start sm:items-center` — content pinned to top on mobile with `pt-24 sm:pt-0`
-- **Content padding**: `px-6 sm:px-12 lg:px-16 pb-20 sm:pb-0` — bottom padding to clear nav on mobile
-- **Subheading**: `text-[11px] sm:text-xs`, reduced tracking on mobile
-- **Heading**: `text-5xl sm:text-6xl lg:text-[5.5rem]` — scales down significantly on mobile
-- **Body text**: `text-sm sm:text-base`, max-width `max-w-sm` on all screens
-- **CTA button**: `px-7 py-3.5` — compact on mobile
+- **Content padding**: `px-6 sm:px-12 lg:px-16 pb-20 sm:pb-0`
 - **Galaxy canvas**: Fills entire viewport behind content
-- **Galaxy Y offset**: `galaxyOffsetY: 22` — moved up so galaxy appears more centered on mobile
+- **Galaxy Y offset**: `galaxyOffsetY: 22`
+- **Mobile color boost**: `uMobileBoost: 1.35` — on screens < 640px, colors are boosted 35% for more vibrant appearance
+- **Point size mobile**: `pointSize: 2.2` — larger on all screens for better visibility
 
 ## Color System (Poped Up)
 - Background: `#020204` (near-black void)
